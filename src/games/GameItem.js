@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Scoreboard from '../components/Scoreboard'
+import PongTable from '../components/PongTable'
 import './GameItem.css'
 
 class GameItem extends PureComponent {
@@ -21,6 +22,9 @@ class GameItem extends PureComponent {
             player2={ player2 }
             score={ score }
           />
+        </div>
+        <div className="pongTable">
+          <PongTable />
         </div>
       </article>
     )
