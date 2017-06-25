@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Title from '../components/Title'
 import GameItem from './GameItem'
+import { connect } from 'react-redux'
 import './GamesContainer.sass'
 
 class GamesContainer extends PureComponent {
@@ -24,4 +25,8 @@ class GamesContainer extends PureComponent {
   }
 }
 
-export default GamesContainer
+const mapStateToProps = ({ games }) => ({
+  games
+})
+
+export default connect(mapStateToProps)(GamesContainer)
