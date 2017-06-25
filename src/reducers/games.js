@@ -1,3 +1,5 @@
+import { CREATE_GAME } from '../actions/games/create'
+
 const games = [
   {
     title: "Game 1",
@@ -20,5 +22,11 @@ const games = [
 ]
 
 export default ( state = games, { type, payload } = {} ) => {
-  return state
+  switch(type) {
+    case CREATE_GAME :
+      return [Object.assign({}, payload)].concat(state)
+
+    default :
+      return state
+  }
 }
