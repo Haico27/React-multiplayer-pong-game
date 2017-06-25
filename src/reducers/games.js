@@ -1,3 +1,3 @@
-export default function ( state = [], { type, payload } = {} ) => {
+export default ( state = [], { type, payload } = {} ) => {
   return state
 }
