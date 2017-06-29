@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router'
 import Scoreboard from '../components/Scoreboard'
 import PongTable from '../components/PongTable'
 import './GameItem.css'
@@ -12,10 +13,12 @@ class GameItem extends PureComponent {
   }
 
   render() {
-    const { title, player1, player2, score } = this.props
+    const { _id, title, player1, player2, score } = this.props
     return(
       <article className="game">
-        <h1>{ title }</h1>
+        <h1>
+          <Link to={`/games/${_id}`}>{ title }</Link>
+        </h1>
         <div className="scoreBoard">
           <Scoreboard
             player1={ player1 }
