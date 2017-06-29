@@ -1,5 +1,6 @@
 import API from '../../api'
 import loading from '../loading'
+import loadError from '../load/load-error'
 
 export const FETCHED_GAMES = 'FETCHED_GAMES'
 
@@ -24,7 +25,7 @@ const fetchGames = (dispatch) => {
       })
     })
     .catch((error) => {
-      console.error('Could not fetch the games from the api!', error)
+      dispatch(loadError(error))
     })
     .then(() => {
       dispatch(loading(false))
